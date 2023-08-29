@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <style>
+        #div{
+            width: 300px;
+            height: 250px;
+            border: 2px solid black;
+            position: relative;
+            top: 120px;
+            border-radius: 20%;
+            background-image: linear-gradient(rgb(106, 105, 104),rgb(200, 225, 32));
+        }
+        .cl{
+            position: relative;
+            top: 18px;
+        }
+        #A{
+            color: red;
+        }
+        #B{
+            color: black;
+            font-size: 30px;
+        }
+        #C{
+            color: aqua;
+            font-size: 30px;  
+
+        }
+
+</style>
+</head>
+<body onload="clock()" id="bd">
+    <center>
+        <div id="div">
+            <br>
+    <h1 class="cl" id="A"></h1>
+    <h2 class="cl" id="B"></h2>
+    <h3 class="cl" id="C"></h3>
+   
+        <script>
+            function clock()
+            {
+            var dy=new Date()
+            var day=dy.getDay()
+            switch(day)
+            {
+                case 0:day='SUNDAY';
+                document.getElementById('bd').style.backgroundImage="url(./hulk.png)";
+                document.getElementById('bd').style.backgroundSize="100% 600px";
+                document.getElementById('bd').style.backgroundRepeat="no-repeat";
+                break;
+                case 1:day='MONDAY';
+                document.getElementById('bd').style.backgroundImage="url(./Black\ Widow\ \(1\).jpeg)";
+                document.getElementById('bd').style.backgroundSize="100% 600px";
+                document.getElementById('bd').style.backgroundRepeat="no-repeat";
+                break;
+                case 2:day='TUESDAY';
+                document.getElementById('bd').style.backgroundImage="url(./wanda.jpeg)";
+                document.getElementById('bd').style.backgroundSize="100% 600px";
+                document.getElementById('bd').style.backgroundRepeat="no-repeat";
+                break;
+                case 3:day='WEDNESDAY';
+                document.getElementById('bd').style.backgroundImage="url(./sea..jpg)";
+                document.getElementById('bd').style.backgroundSize="100% 600px";
+                document.getElementById('bd').style.backgroundRepeat="no-repeat";
+                break;
+                case 4:day='THURSDAY';
+                document.getElementById('bd').style.backgroundImage="url(./Doctor\ Strange.jpeg)";
+                document.getElementById('bd').style.backgroundSize="100% 600px";
+                document.getElementById('bd').style.backgroundRepeat="no-repeat";
+                break;
+                case 5:day='FRIDAY';
+                document.getElementById('bd').style.backgroundImage="url(./spider.jpeg)";
+                document.getElementById('bd').style.backgroundSize="100% 600px";
+                document.getElementById('bd').style.backgroundRepeat="no-repeat";
+                break;
+                case 6:day='SATURDAY';
+                document.getElementById('bd').style.backgroundImage="url(./Doctor\ Strange.jpeg)";
+                document.getElementById('bd').style.backgroundSize="100% 600px";
+                document.getElementById('bd').style.backgroundRepeat="no-repeat";
+                break;
+            }
+            document.getElementById('A').innerHTML=day
+
+            var thedhi=dy.getDate()
+            var mon=dy.getMonth()
+            var yy=dy.getFullYear()
+
+            switch(mon)
+            {
+                case 0:mon='JAN';
+                break;
+                case 1:mon='FEB';
+                break;
+                case 2:mon='MAR';
+                break;
+                case 3:mon='APR';
+                break;
+                case 4:mon='MAY';
+                break;
+                case 5:mon='JUN';
+                break;
+                case 6:mon='JUL';
+                break;
+                case 7:mon='AUG';
+                break;
+                case 8:mon='SEP';
+                break;
+                case 9:mon='OCT';
+                break;
+                case 10:mon='NOV';
+                break;
+                case 11:mon='DEC';
+                break;                
+            }
+            document.getElementById('B').innerHTML=thedhi + '/' + mon + '/' + yy
+            var hr=dy.getHours()
+            var min=dy.getMinutes()
+            var sec=dy.getSeconds()
+            var session=''
+
+            if(hr>=0&&hr<=12)
+            {
+                session="AM"
+            }
+            else{
+                session="PM"
+            }
+             if(hr>=12)
+            {
+                hr=hr-12
+            }
+            else{
+                hr=hr
+            }
+
+            document.getElementById('C').innerHTML= hr + ':' + min + ':' + sec + ':' + session
+
+            setTimeout(function(){clock(),1000})
+        }
+            
+
+        </script>
+   </div>
+    </center>
+</body>
+</html>
